@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { LightsComponent } from './lights/lights.component';
+import { LightComponent } from './light/light.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ConfigurationComponent,
-    LightsComponent
+    LightsComponent,
+    LightComponent
   ],
   imports: [
     BrowserModule,

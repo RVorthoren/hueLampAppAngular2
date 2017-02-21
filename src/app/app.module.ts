@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+
+import { AppRoutingModule} from './app-routing.module';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -20,24 +22,7 @@ import { LightsComponent } from './lights/lights.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'home',
-        component: HomeComponent
-      },
-      {
-        path: 'config',
-        component: ConfigurationComponent
-      },
-      {
-        path: 'lights',
-        component: LightsComponent
-      },
-      {
-        path: '**',
-        redirectTo: '/home'
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

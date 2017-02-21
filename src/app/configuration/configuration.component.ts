@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Config } from '../Config';
 
 @Component({
   selector: 'configuration',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigurationComponent implements OnInit {
 
-  constructor() { }
+  private config: Config;
 
-  ngOnInit() {
+  constructor() {
+    this.config = new Config();
+    this.config.ip = "localhost";
+    this.config.port = 80;
+    this.config.username = "461be51ef5609e7164ca3a9eac2c31a";
+
   }
 
+  ngOnInit() {
+
+  }
 }

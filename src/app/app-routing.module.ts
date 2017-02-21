@@ -8,7 +8,7 @@ import { LightComponent } from './light/light.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'config', component: ConfigurationComponent },
+  { path: 'configuration', component: ConfigurationComponent },
   { path: 'lights', component: LightsComponent },
   { path: 'lights/:id', component: LightComponent},
   { path: '**', redirectTo: '/home' }

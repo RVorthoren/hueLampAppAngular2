@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
+
+import { ActivatedRoute, Params }   from '@angular/router';
+
 @Component({
-  selector: 'app-light',
+  selector: 'light',
   templateUrl: './light.component.html',
   styleUrls: ['./light.component.css']
 })
 export class LightComponent implements OnInit {
 
-  constructor() { }
+  private id: String;
+
+  constructor(private route: ActivatedRoute) {  }
 
   ngOnInit() {
+    this.route.params.subscribe((params: Params) => {
+      this.id = params['id'];
+      console.log(this.id);
+    });
   }
 
 }

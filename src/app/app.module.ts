@@ -11,6 +11,8 @@ import { ConfigurationComponent } from './configuration/configuration.component'
 import { LightsComponent } from './lights/lights.component';
 import { LightComponent } from './light/light.component';
 
+import { LightsService } from './lights/lights.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,7 @@ import { LightComponent } from './light/light.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ LightsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

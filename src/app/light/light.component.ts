@@ -12,18 +12,12 @@ export class LightComponent implements OnInit {
 
   private light: Light;
 
-  constructor(private route: ActivatedRoute) {
-    this.light = new Light();
-    this.light.name = "Hue Lamp 1";
-    this.light.on = true;
-    this.light.hue = 4444;
-    this.light.saturation = 254;
-    this.light.brightness = 254;
-  }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
-      this.light.id = params['id'];
+       let paramsId = params['id'];
+       console.log('params id', paramsId);
     });
   }
 

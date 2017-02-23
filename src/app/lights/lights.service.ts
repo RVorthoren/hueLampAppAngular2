@@ -5,12 +5,38 @@ import { Light } from '../light';
 @Injectable()
 export class LightsService {
 
-  constructor() { }
+  private lightsObject;
 
-  getLights(): Promise<Light[]>  {
-    return Promise.resolve(Test_Lights);
+  constructor() {
+    this.lightsObject = {};
   }
 
+  private saveLights(lights: Light[]) : void {
+    lights.forEach(value => {
+      this.lightsObject[value.id] = value;
+    });
+  }
+
+  getLights(): Promise<Light[]>  {
+    const lights = Test_Lights;
+
+    this.saveLights(lights);
+
+    return Promise.resolve(lights);
+  }
+
+  getLightsSlow() : Promise<Light[]> {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(this.getLights()), 2000);
+    });
+  }
+
+  getLight(id: number) : Light {
+    if (!this.lightsObject) return null;
+    if (!(id in this.lightsObject)) return null;
+
+    return this.lightsObject[id];
+  }
 }
 
 /*Test lights*/

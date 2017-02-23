@@ -30,13 +30,6 @@ export class LightsService {
       setTimeout(() => resolve(this.getLights()), 2000);
     });
   }
-
-  getLight(id: number) : Light {
-    if (!this.lightsObject) return null;
-    if (!(id in this.lightsObject)) return null;
-
-    return this.lightsObject[id];
-  }
 }
 
 /*Test lights*/

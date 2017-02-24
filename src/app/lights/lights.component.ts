@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { Light } from '../light';
 import { LightsService } from './lights.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { LightsService } from './lights.service';
 })
 export class LightsComponent implements OnInit {
 
-  private lights: Object;
+  lights: Light[];
 
   constructor(
     private lightsService: LightsService,
@@ -23,7 +24,13 @@ export class LightsComponent implements OnInit {
 
   private getLights(): void {
     this.lightsService.getLights().then(lights => {
-      this.lights = lights;
+      const lightsArray = [];
+
+      Object.keys(lights).forEach(key => {
+        lightsArray.push(lights[key]);
+      });
+
+      this.lights = lightsArray;
     });
   }
 

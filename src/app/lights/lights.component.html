@@ -3,5 +3,14 @@
 </h2>
 
 <ul>
-
+  <li *ngFor="let light of lights">
+    <span>
+      On:{{light.on}}
+      Hue:{{light.hue}}
+      Sat:{{light.saturation}}
+      Bri:{{light.brightness}}
+      Name:{{light.name}}
+    </span>
+    <input type="button" value="Detail" (click)="goToDetail(light)"/>
+  </li>
 </ul>

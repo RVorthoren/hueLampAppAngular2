@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 
 import { Light } from '../light';
+import { LightsService } from '../lights/lights.service';
 
 @Component({
   selector: 'light',
@@ -12,12 +13,16 @@ export class LightComponent implements OnInit {
 
   private light: Light;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private lightService: LightsService
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
        let paramsId = params['id'];
-       console.log('params id', paramsId);
+
+       this.light = this.lightService.getLight(paramsId);
     });
   }
 

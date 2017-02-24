@@ -15,6 +15,13 @@ export class LightsService {
     return Promise.resolve(this.lights);
   }
 
+  getLight(id: number) {
+    if (!this.lights) this.addTestLights();
+    if (!(id in this.lights)) return {};
+
+    return this.lights[id];
+  }
+
   private addTestLights(): void {
     this.lights = Test_Lights;
   }

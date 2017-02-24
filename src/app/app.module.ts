@@ -12,6 +12,7 @@ import { LightsComponent } from './lights/lights.component';
 import { LightComponent } from './light/light.component';
 import { LightsService } from './lights/lights.service';
 import { EditComponent } from './light/edit/edit.component';
+import { HeaderComponent } from './light/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EditComponent } from './light/edit/edit.component';
     ConfigurationComponent,
     LightsComponent,
     LightComponent,
-    EditComponent
+    EditComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

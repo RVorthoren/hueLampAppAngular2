@@ -1,62 +1,50 @@
 import { Injectable } from '@angular/core';
 
-import { Light } from '../light';
-
 @Injectable()
 export class LightsService {
 
-  private lightsObject;
+  private lights;
 
   constructor() {
-    this.lightsObject = {};
+    this.addTestLights();
   }
 
-  private saveLights(lights: Light[]) : void {
-    lights.forEach(value => {
-      this.lightsObject[value.id] = value;
-    });
+  getLights(): Promise<Object>  {
+    if (!this.lights) this.addTestLights();
+
+    return Promise.resolve(this.lights);
   }
 
-  getLights(): Promise<Light[]>  {
-    const lights = Test_Lights;
-
-    this.saveLights(lights);
-
-    return Promise.resolve(lights);
-  }
-
-  getLightsSlow() : Promise<Light[]> {
-    return new Promise(resolve => {
-      setTimeout(() => resolve(this.getLights()), 2000);
-    });
+  private addTestLights(): void {
+    this.lights = Test_Lights;
   }
 }
 
 /*Test lights*/
-const Test_Lights: Light[] = [
-  {
+const Test_Lights: Object = {
+  1: {
     id: 1,
     name: 'Hue Lamp 1',
-    on: false,
+    on: true,
     hue: 4444,
     saturation: 254,
     brightness: 254
   },
-  {
+  2: {
     id: 2,
     name: 'Hue Lamp 2',
-    on: false,
+    on: true,
     hue: 23536,
     saturation: 144,
     brightness: 254
   },
-  {
+  3: {
     id: 3,
     name: 'Hue Lamp 3',
-    on: false,
+    on: true,
     hue: 23536,
     saturation: 144,
     brightness: 254
   }
-];
+};
 

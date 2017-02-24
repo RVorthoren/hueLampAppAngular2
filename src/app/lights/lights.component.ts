@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Light } from '../light';
 import { LightsService } from './lights.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { LightsService } from './lights.service';
 })
 export class LightsComponent implements OnInit {
 
-  private lights: Light[];
+  private lights: Object;
 
   constructor(
     private lightsService: LightsService,
@@ -23,9 +22,9 @@ export class LightsComponent implements OnInit {
   }
 
   private getLights(): void {
-    this.lightsService.getLights().then(
-      lights => this.lights = lights
-    );
+    this.lightsService.getLights().then(lights => {
+      this.lights = lights;
+    });
   }
 
   goToDetail(light): void {

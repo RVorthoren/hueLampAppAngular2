@@ -10,8 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { LightsComponent } from './lights/lights.component';
 import { LightComponent } from './light/light.component';
-
 import { LightsService } from './lights/lights.service';
+import { EditComponent } from './light/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { LightsService } from './lights/lights.service';
     HomeComponent,
     ConfigurationComponent,
     LightsComponent,
-    LightComponent
+    LightComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

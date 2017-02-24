@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
+import { LightsService } from '../../lights/lights.service';
+import { Light } from '../../light';
 
 @Component({
   selector: 'app-edit',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
-  constructor() { }
+  private light: Light;
+
+  constructor(
+    private route: ActivatedRoute,
+    private lightService: LightsService
+  ) { }
 
   ngOnInit() {
+    this.route.params.subscribe((params: Params) => {
+      let paramsId = params['id'];
+
+      this.light = this.lightService.getLight(paramsId);
+    });
   }
 
 }

@@ -1,3 +1,10 @@
-<p>
-  edit works!
-</p>
+<light-header [light]="light"></light-header>
+
+<div>
+    <span>Hue:</span>
+    <input
+            [(ngModel)]="light.hue"
+            placeholder="Hue"
+            (ngModelChange)="isEdited()"
+    >
+</div>

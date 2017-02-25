@@ -49,8 +49,8 @@ const Test_Lights: Object = {
     id: 3,
     name: 'Hue Lamp 3',
     on: true,
-    hue: 23536,
-    saturation: 144,
+    hue: 13215,
+    saturation: 254,
     brightness: 254
   }
 };

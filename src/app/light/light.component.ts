@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params }   from '@angular/router';
+import { Router,ActivatedRoute, Params }   from '@angular/router';
 
 import { Light } from '../light';
 import { LightsService } from '../lights/lights.service';
@@ -13,17 +13,20 @@ export class LightComponent implements OnInit {
 
   private light: Light;
 
-  constructor(
-    private route: ActivatedRoute,
-    private lightService: LightsService
-  ) { }
+  constructor(private route: ActivatedRoute,
+              private lightService: LightsService,
+              private router: Router) {
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
-       let paramsId = params['id'];
+      let paramsId = params['id'];
 
-       this.light = this.lightService.getLight(paramsId);
+      this.light = this.lightService.getLight(paramsId);
     });
   }
 
+  goToEdit() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
+  }
 }

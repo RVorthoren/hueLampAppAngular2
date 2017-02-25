@@ -1,10 +1,21 @@
 <light-header [light]="light"></light-header>
 
 <div>
+    <span>On:</span>
+    <input type="checkbox" [(ngModel)]="light.on" (ngModelChange)="isEdited()">
+</div>
+
+<div>
     <span>Hue:</span>
-    <input
-            [(ngModel)]="light.hue"
-            placeholder="Hue"
-            (ngModelChange)="isEdited()"
-    >
+    <input [(ngModel)]="light.hue" placeholder="Hue" (ngModelChange)="isEdited()">
+</div>
+
+<div>
+    <span>Saturation:</span>
+    <input [(ngModel)]="light.saturation" placeholder="Hue" (ngModelChange)="isEdited()">
+</div>
+
+<div>
+    <span>Brightness:</span>
+    <input [(ngModel)]="light.brightness" placeholder="Hue" (ngModelChange)="isEdited()">
 </div>

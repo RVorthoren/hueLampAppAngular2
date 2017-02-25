@@ -36,5 +36,6 @@ export class EditComponent implements OnInit {
 
   isEdited() {
     this.edited = true;
+    console.log(this.light);
   }
 }

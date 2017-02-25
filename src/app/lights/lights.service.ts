@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 
+import { Light } from '../light';
+
 @Injectable()
 export class LightsService {
 
-  private lights;
+  private lights: any;
 
   constructor() {
     this.addTestLights();
@@ -20,6 +22,11 @@ export class LightsService {
     if (!(id in this.lights)) return {};
 
     return this.lights[id];
+  }
+
+  updateLight(light: Light) {
+    if (!this.lights || !light) return;
+    this.lights[light.id] = light;
   }
 
   private addTestLights(): void {

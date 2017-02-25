@@ -19,3 +19,8 @@
     <span>Brightness:</span>
     <input [(ngModel)]="light.brightness" placeholder="Hue" (ngModelChange)="isEdited()">
 </div>
+
+<div>
+    <input type="button" (click)="updateLight()" value="Update" [disabled]="!edited">
+    <input type="button" (click)="backToDetail()" value="Back">
+</div>

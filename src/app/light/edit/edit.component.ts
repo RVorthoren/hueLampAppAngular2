@@ -2,7 +2,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-
+import { Location } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { LightsService } from '../../lights/lights.service';
@@ -20,7 +20,8 @@ export class EditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private lightService: LightsService
+    private lightService: LightsService,
+    private location: Location
   ) {
     this.edited = false;
   }
@@ -36,6 +37,14 @@ export class EditComponent implements OnInit {
 
   isEdited() {
     this.edited = true;
-    console.log(this.light);
+  }
+
+  updateLight() {
+    this.lightService.updateLight(this.light);
+    this.edited = false;
+  }
+
+  backToDetail() {
+    this.location.back();
   }
 }

@@ -2,8 +2,11 @@
   {{title}}
 </h1>
 
-<a routerLink="/home">Home</a>
-<a routerLink="/configuration">Configuration</a>
-<a routerLink="/lights">Lights</a>
+<nav>
+  <a routerLink="/home" routerLinkActive="active">Home</a>
+  <a routerLink="/configuration" routerLinkActive="active">Configuration</a>
+  <a routerLink="/lights" routerLinkActive="active">Lights</a>
+</nav>
+
 
 <router-outlet></router-outlet>

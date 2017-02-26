@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Config } from '../Config';
 
 @Component({
@@ -10,7 +11,7 @@ export class ConfigurationComponent implements OnInit {
 
   private config: Config;
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.config = new Config();
     this.config.ip = "localhost";
     this.config.port = 80;
@@ -20,5 +21,9 @@ export class ConfigurationComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  goToEdit() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
   }
 }

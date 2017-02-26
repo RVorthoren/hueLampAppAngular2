@@ -11,7 +11,8 @@ import { ConfigurationComponent } from './configuration/configuration.component'
 import { LightsComponent } from './lights/lights.component';
 import { LightComponent } from './light/light.component';
 import { LightsService } from './lights/lights.service';
-import { EditComponent } from './light/edit/edit.component';
+import { EditComponent as LightEdit } from './light/edit/edit.component';
+import { EditComponent as EditConfig } from './configuration/edit/edit.component';
 import { HeaderComponent } from './light/header/header.component';
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HeaderComponent } from './light/header/header.component';
     ConfigurationComponent,
     LightsComponent,
     LightComponent,
-    EditComponent,
+    LightEdit,
+    EditConfig,
     HeaderComponent
   ],
   imports: [

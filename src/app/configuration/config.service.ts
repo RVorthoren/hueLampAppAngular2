@@ -17,4 +17,8 @@ export class ConfigService {
   getConfig(): Promise<Config> {
     return Promise.resolve(this.config);
   }
+
+  updateConfig(newConfig: Config): void {
+    this.config = newConfig;
+  }
 }

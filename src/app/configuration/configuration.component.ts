@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Config } from '../Config';
+import { ConfigService } from './config.service';
 
 @Component({
   selector: 'configuration',
@@ -11,16 +12,18 @@ export class ConfigurationComponent implements OnInit {
 
   private config: Config;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-    this.config = new Config();
-    this.config.ip = "localhost";
-    this.config.port = 80;
-    this.config.username = "461be51ef5609e7164ca3a9eac2c31a";
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private configService: ConfigService
+  ) {
 
   }
 
   ngOnInit() {
-
+    this.configService.getConfig().then(configObject => {
+      this.config = configObject;
+    })
   }
 
   goToEdit() {

@@ -4,17 +4,17 @@
 
 <div>
   <label>Ip-Address:</label>
-  <span>{{config.ip}}</span>
+  <span>{{config ? config.ip : ''}}</span>
 </div>
 
 <div>
   <label>Port:</label>
-  <span>{{config.port}}</span>
+  <span>{{config ? config.port : ''}}</span>
 </div>
 
 <div>
   <label>Username:</label>
-  <span>{{config.username}}</span>
+  <span>{{config ? config.username : ''}}</span>
 </div>
 
 <div>

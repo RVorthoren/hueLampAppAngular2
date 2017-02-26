@@ -10,10 +10,12 @@ import { HomeComponent } from './home/home.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { LightsComponent } from './lights/lights.component';
 import { LightComponent } from './light/light.component';
-import { LightsService } from './lights/lights.service';
 import { EditComponent as LightEdit } from './light/edit/edit.component';
 import { EditComponent as EditConfig } from './configuration/edit/edit.component';
 import { HeaderComponent } from './light/header/header.component';
+
+import { LightsService } from './lights/lights.service';
+import { ConfigService } from './configuration/config.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { HeaderComponent } from './light/header/header.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ LightsService ],
+  providers: [
+    LightsService,
+    ConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

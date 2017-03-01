@@ -1,21 +1,33 @@
-table {
-
+h2 {
+    text-align: center;
 }
 
-td,th {
-    padding: 0.5em;
+table {
+    margin: auto;
+    width: 80%;
+}
+
+.background {
+    background-color: #f1f1f1;
+}
+
+td {
+    text-align: center;
+}
+th {
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 td.off {
-    background-color: red;
+    background-color: #F75454;
 }
 
 td.on {
-    background-color: green;
+    background-color: #6EF57E;
 }
 
-tr.head {
-    margin: 10px;
-    background-color: #f1f1f1;
-
+td.detail {
+    text-align: right;
 }

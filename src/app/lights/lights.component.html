@@ -4,8 +4,8 @@
 
 <table>
   <thead>
-    <tr class="head">
-      <th>On</th>
+    <tr class="background">
+      <th>Status</th>
       <th>Hue</th>
       <th>Sat</th>
       <th>Bri</th>
@@ -17,12 +17,13 @@
   <tbody>
     <tr *ngFor="let light of lights">
       <td [ngClass]="{on: light.on, off: !light.on}">
+          {{light.on ? 'Aan' : 'Uit'}}
       </td>
       <td>{{light.hue}}</td>
       <td>{{light.saturation}}</td>
       <td>{{light.brightness}}</td>
       <td>{{light.name}}</td>
-      <td><input type="button" value="Detail" (click)="goToDetail(light)"/></td>
+      <td class="detail"><input type="button" value="Detail" (click)="goToDetail(light)"/></td>
     </tr>
   </tbody>
 </table>

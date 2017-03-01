@@ -23,10 +23,11 @@
         type="text"
         [(ngModel)]="config.username"
         (ngModelChange)="edit()"
-        title="username-edit"/>
+        title="username-edit"
+/>
 </div>
 
 <div>
-  <input type="button" (click)="update()" value="Update" [disabled]="!edited">
+  <input type="button" [ngClass]="{disabled: !edited}" (click)="update()" value="Update" [disabled]="!edited">
   <input type="button" (click)="back()" value="Back">
 </div>

@@ -21,6 +21,12 @@
 </div>
 
 <div>
-    <input type="button" (click)="updateLight()" value="Update" [disabled]="!edited">
+    <input
+        [ngClass]="{disabled: !edited}"
+        type="button"
+        (click)="updateLight()"
+        value="Update"
+        [disabled]="!edited"
+    >
     <input type="button" (click)="backToDetail()" value="Back">
 </div>

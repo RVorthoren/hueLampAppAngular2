@@ -6,8 +6,16 @@ td,th {
     padding: 0.5em;
 }
 
+td.off {
+    background-color: red;
+}
+
+td.on {
+    background-color: green;
+}
+
 tr.head {
     margin: 10px;
-    background-color: red;
-    color: white;
+    background-color: #f1f1f1;
+
 }

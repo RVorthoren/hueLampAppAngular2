@@ -1,0 +1,13 @@
+table {
+
+}
+
+td,th {
+    padding: 0.5em;
+}
+
+tr.head {
+    margin: 10px;
+    background-color: red;
+    color: white;
+}

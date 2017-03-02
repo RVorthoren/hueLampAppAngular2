@@ -1,33 +1,54 @@
-<h1>
-  Configuration
-</h1>
+<div class="configPage">
+  <h1>
+    Configuration
+  </h1>
 
-<div>
-  Ip-adress: <input
-        type="text"
-        [(ngModel)]="config.ip"
-        (ngModelChange)="edit()"
-        title="ip-edit"/>
-</div>
+  <div class="container-fluid">
+    <div class="row full-width-row">
+      <div class="col-xs-1 col-label">
+        <span>Ip-address:</span>
+      </div>
+      <div>
+        <input
+          type="text"
+          [(ngModel)]="config.ip"
+          (ngModelChange)="edit()"
+          title="ip-edit"
+        >
+      </div>
+    </div>
 
-<div>
-  Port: <input
-        type="number"
-        [(ngModel)]="config.port"
-        (ngModelChange)="edit()"
-        title="port-edit"/>
-</div>
+    <div class="row full-width-row">
+      <div class="col-xs-1 col-label">
+        <span>Port:</span>
+      </div>
+      <div>
+        <input
+          type="number"
+          [(ngModel)]="config.port"
+          (ngModelChange)="edit()"
+          title="port-edit"
+        >
+      </div>
+    </div>
+    <div class="row full-width-row">
+      <div class="col-xs-1 col-label">
+        <span>Username:</span>
+      </div>
+      <div>
+        <input
+          type="text"
+          [(ngModel)]="config.username"
+          (ngModelChange)="edit()"
+          title="username-edit"
+          class="username"
+        >
+      </div>
+    </div>
+  </div>
 
-<div>
-  Username: <input
-        type="text"
-        [(ngModel)]="config.username"
-        (ngModelChange)="edit()"
-        title="username-edit"
-/>
-</div>
-
-<div>
-  <input type="button" [ngClass]="{disabled: !edited}" (click)="update()" value="Update" [disabled]="!edited">
-  <input type="button" (click)="back()" value="Back">
+  <div class="buttons">
+    <button class="btn" (click)="update()" [disabled]="!edited">Update</button>
+    <button class="btn" (click)="back()">Back</button>
+  </div>
 </div>

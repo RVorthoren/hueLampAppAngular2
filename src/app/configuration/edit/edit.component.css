@@ -7,10 +7,6 @@
     margin-right: -15px;
 }
 
-input[type='text'], input[type='number'] {
-    border: none;
-}
-
 .username {
     outline: none;
 }

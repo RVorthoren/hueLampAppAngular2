@@ -7,26 +7,41 @@
 
 <div>
     <span>Hue:</span>
-    <input [(ngModel)]="light.hue" placeholder="Hue" (ngModelChange)="isEdited()">
+    <input
+        type="number"
+        [(ngModel)]="light.hue"
+        placeholder="Hue"
+        (ngModelChange)="isEdited()"
+        min="0"
+        max="65280"
+    >
 </div>
 
 <div>
     <span>Saturation:</span>
-    <input [(ngModel)]="light.saturation" placeholder="Hue" (ngModelChange)="isEdited()">
+    <input
+        type="number"
+        [(ngModel)]="light.saturation"
+        placeholder="Sat"
+        (ngModelChange)="isEdited()"
+        min="0"
+        max="254"
+    >
 </div>
 
 <div>
     <span>Brightness:</span>
-    <input [(ngModel)]="light.brightness" placeholder="Hue" (ngModelChange)="isEdited()">
+    <input
+        type="number"
+        [(ngModel)]="light.brightness"
+        placeholder="Bri"
+        (ngModelChange)="isEdited()"
+        min="0"
+        max="254"
+    >
 </div>
 
 <div>
-    <input
-        [ngClass]="{disabled: !edited}"
-        type="button"
-        (click)="updateLight()"
-        value="Update"
-        [disabled]="!edited"
-    >
-    <input type="button" (click)="backToDetail()" value="Back">
+    <button class="btn" (click)="updateLight()" [disabled]="!edited">Update</button>
+    <button class="btn" (click)="backToDetail()">Back</button>
 </div>
